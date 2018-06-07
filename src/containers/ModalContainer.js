@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {setIsLoading} from "../actions";
 import Modal from '../components/Modal';
 
 //create a function, name is irrelevant
@@ -10,7 +11,14 @@ function mapStateToProps(state){
       isLoading:state.isLoading
       //the right side value is the name of the state
     }
-  }
-  let ModalContainer = connect(mapStateToProps);
-
-  export default ModalContainer;
+}
+  function mapDispatchToProps(dispatch){
+    return {
+      setIsLoading:function(){
+        var action = setIsLoading();
+        dispatch(action);
+      }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+ 
