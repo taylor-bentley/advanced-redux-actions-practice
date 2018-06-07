@@ -28,4 +28,13 @@ function UserButtons(props) {
       </div>
   );
 }
+//I want to change data
+//function mapDispatchToProps(dispatch){
+  //return {
+    //add:function(user){
+      //var action = addUser(user);
+      //dispatch(action);
+    //}
+  //}
+//}
 export default UserButtons;
